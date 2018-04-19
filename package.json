@@ -27,6 +27,7 @@
     "@types/minimist": "^1.2.0",
     "@types/node": "^9.6.5",
     "@types/node-sass": "^3.10.32",
+    "@types/sharp": "^0.17.8",
     "nodemon": "^1.17.3",
     "ts-node": "^6.0.0",
     "tslint": "^5.9.1",
@@ -39,6 +40,7 @@
     "markdown-it": "^8.4.1",
     "minimist": "^1.2.0",
     "node-sass": "^4.8.3",
-    "purify-css": "^1.2.5"
+    "purify-css": "^1.2.5",
+    "sharp": "^0.20.1"
   }
 }

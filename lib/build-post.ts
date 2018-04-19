@@ -1,6 +1,11 @@
 import * as purify from 'purify-css'
 
-const render = ({title}: Post['attributes'], html: string, nextPrev: string, css: string) => `
+const render = (
+  {title}: Post['attributes'],
+  html: string,
+  nextPrev: string,
+  css: string
+): string => `
   <!doctype html>
   <html>
     <head>
@@ -18,7 +23,7 @@ const render = ({title}: Post['attributes'], html: string, nextPrev: string, css
   </html>
 `
 
-const renderNextPrev = (posts: Post[], post: Post) => {
+const renderNextPrev = (posts: Post[], post: Post): string => {
   const i = posts.findIndex(({attributes}) => attributes.slug === post.attributes.slug)
   const prevPost = posts[i - 1]
   const nextPost = posts[i + 1]
@@ -32,7 +37,7 @@ const renderNextPrev = (posts: Post[], post: Post) => {
   return `<div class="prev-next">${prev} ${back} ${next}</a>`
 }
 
-export default (post: Post, css: string, posts: Post[]) => {
+export default (post: Post, css: string, posts: Post[]): string => {
   const {attributes, html} = post
   const nextPrev = renderNextPrev(posts, post)
   const content = render(attributes, html, nextPrev, '')

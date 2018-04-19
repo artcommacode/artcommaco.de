@@ -1,6 +1,6 @@
 import * as purify from 'purify-css'
 
-const render = (posts: Post[], nextPrev: string, css: string) => `
+const render = (posts: Post[], nextPrev: string, css: string): string => `
   <!doctype html>
   <html>
     <head>
@@ -25,7 +25,7 @@ const render = (posts: Post[], nextPrev: string, css: string) => `
   </html>
 `
 
-const renderNextPrev = (posts: Post[], pageNum: number, pagesTotal: number) => {
+const renderNextPrev = (posts: Post[], pageNum: number, pagesTotal: number): string => {
   const prev =
     pageNum > 2
       ? `<a class="prev" href="/pages/${pageNum - 1}.html"/>&larr;</a>`
@@ -35,7 +35,7 @@ const renderNextPrev = (posts: Post[], pageNum: number, pagesTotal: number) => {
   return `<div class="prev-next">${prev} ${next}</a>`
 }
 
-export default (posts: Post[], css: string, pageNum: number, pagesTotal: number) => {
+export default (posts: Post[], css: string, pageNum: number, pagesTotal: number): string => {
   const nextPrev = renderNextPrev(posts, pageNum, pagesTotal)
   const content = render(posts, nextPrev, '')
   const purifiedCSS = purify(content, css, {minify: true})
