@@ -2,11 +2,12 @@ import * as purify from 'purify-css'
 
 const render = (posts: Post[], nextPrev: string, css: string): string => `
   <!doctype html>
-  <html>
+  <html lang="en">
     <head>
       <meta charset="utf-8" />
       <title>Art, Code</title>
       <meta name="viewport" content="width=device-width initial-scale=1 maximum-scale=1 user-scalable=no" />
+      <meta name="description" content="The occasional blog of @ccommma"/>  
       <link rel="shortcut icon" href="/favicon.png" />
       <style>${css}</style>
     </head>

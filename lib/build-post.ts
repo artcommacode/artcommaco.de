@@ -7,7 +7,7 @@ const render = (
   css: string
 ): string => `
   <!doctype html>
-  <html>
+  <html lang="en">
     <head>
       <meta charset="utf-8" />
       <title>${title} | Art, Code</title>
