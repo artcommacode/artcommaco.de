@@ -5,7 +5,7 @@ import {readFileSync} from 'fs'
 import {join} from 'path'
 import resizeImage from './resize-image'
 
-const md = Md({
+let md = Md({
   html: true,
   typographer: true,
   highlight: (str, lang) => highlight(lang, str).value
@@ -14,9 +14,9 @@ const md = Md({
 md.renderer.rules.image = (tokens, i) => {
   const token = tokens[i]
   const src = token.attrs[token.attrIndex('src')][1]
-  const [w760, w1520, w2280] = [760, 1520, 2280].map(resizeImage(src))
+  const [w760, w1280] = [760, 1280].map(resizeImage(src))
   return `<img
-    srcset="${w760}1x, ${w1520} 2x, ${w2280} 3x"
+    srcset="${w760}1x, ${w1280} 2x"
     src="${w760}"
   >`
 }
