@@ -1,4 +1,4 @@
-@import 'vendor/_fonts.scss';
+@import 'vendor/fonts';
 
 * {
   margin: 0;
@@ -10,31 +10,36 @@ html {
 }
 
 body {
+  -moz-font-feature-settings: “liga” on;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   font-family: 'Optima', Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
-  font-weight: 300;
-  font-size: 21px;
   font-feature-settings: “liga” on;
+  font-size: 21px;
+  font-weight: 300;
   line-height: 1.6;
   overflow-x: hidden;
   padding: 4rem 0 3rem;
-  -moz-font-feature-settings: “liga” on;
   text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 a {
+  background-image: linear-gradient(#fff, #fff), linear-gradient(#fff, #fff),
+    linear-gradient(#000, #000);
+  background-position: 0% 90%, 100% 90%, 0% 90%;
+  background-repeat: no-repeat, no-repeat, repeat-x;
+  background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
   color: inherit;
   text-decoration: none;
-  text-shadow: .03em 0 white, -.03em 0 white, 0 .03em white, 0 -.03em white, .06em 0 white, -.06em 0 white, .09em 0 white, -.09em 0 white, .12em 0 white, -.12em 0 white, .15em 0 white, -.15em 0 white;
-  background-image: linear-gradient(white, white), linear-gradient(white, white), linear-gradient(black, black);
-  background-size: .05em 1px, .05em 1px, 1px 1px;
-  background-repeat: no-repeat, no-repeat, repeat-x;
-  background-position: 0% 90%, 100% 90%, 0% 90%;
+  text-shadow: 0.03em 0 #fff, -0.03em 0 #fff, 0 0.03em #fff, 0 -0.03em #fff, 0.06em 0 #fff,
+    -0.06em 0 #fff, 0.09em 0 #fff, -0.09em 0 #fff, 0.12em 0 #fff, -0.12em 0 #fff, 0.15em 0 #fff,
+    -0.15em 0 #fff;
 }
 
-h1 a {
-  background-image: none;
+h1 {
+  a {
+    background-image: none;
+  }
 }
 
 img {
@@ -42,12 +47,19 @@ img {
   width: 100%;
 }
 
-h1, h2, p, pre code, ul, ol, blockquote, .prev-next {
+h1,
+h2,
+p,
+ul,
+ol,
+blockquote,
+.prev-next {
   margin: 0 auto;
   max-width: 76rem;
 }
 
-h1, h2 {
+h1,
+h2 {
   font-family: 'Antique Olive';
   font-size: 2.2rem;
   font-weight: 700;
@@ -59,13 +71,17 @@ h2 {
   margin: 1.8rem auto -1rem;
 }
 
-p, ul, ol, pre {
+p,
+ul,
+ol,
+pre {
   padding: 1.6rem 0;
 }
 
 code {
   color: rgb(20, 20, 20);
-  font-family: 'Source Code Pro', Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
+  font-family: 'Source Code Pro', Monaco, 'Bitstream Vera Sans Mono', 'Lucida Console', Terminal,
+    monospace;
   font-size: 2rem;
   font-weight: 500;
 }
@@ -73,48 +89,54 @@ code {
 pre {
   background: rgb(250, 250, 250);
   margin: 1.4rem 0;
-  overflow-x: scroll
-}
+  overflow-x: scroll;
 
-pre code {
-  color: rgb(0, 0, 0);
-  display: block;
-  font-size: 1.8rem;
-  font-weight: 400;
-  overflow-x: visible;
+  code {
+    color: rgb(0, 0, 0);
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin: 0 auto;
+    max-width: 76rem;
+    overflow-x: visible;
+  }
 }
 
 blockquote {
-  box-sizing: border-box;
   border-left: 3px solid rgb(240, 240, 240);
+  box-sizing: border-box;
+  font-style: italic;
   margin: 1.6rem auto;
   padding: 0 0 0 3rem;
-  font-style: italic;
-}
 
-blockquote p:first-of-type {
-  padding-top: 0;
-}
+  p {
+    :first-of-type {
+      padding-top: 0;
+    }
 
-blockquote p:last-of-type {
-  padding-bottom: 0;
+    :last-of-type {
+      padding-bottom: 0;
+    }
+  }
 }
 
 hr {
-  border: none;
   background: rgb(0, 0, 0);
+  border: 0;
   height: 2px;
   margin: 5rem auto 6.5rem;
   width: 8rem;
 }
 
-.prev, .back, .next {
+.prev,
+.back,
+.next {
   background-image: none;
 }
 
 .back {
-  left: 50%;
   display: inline-block;
+  left: 50%;
   margin-left: -1rem;
   position: absolute;
   text-align: center;
@@ -123,10 +145,10 @@ hr {
 
 .prev-next {
   padding: 3rem 0;
-}
 
-.prev-next:after {
-  clear: both;
+  ::after {
+    clear: both;
+  }
 }
 
 .prev {
@@ -149,7 +171,6 @@ hr {
   color: rgb(190, 190, 190);
 }
 
-
 @media screen and (max-width: 920px) {
   body {
     font-size: 19px;
@@ -167,7 +188,10 @@ hr {
     margin: 1.4rem auto -0.8rem;
   }
 
-  p, ul, ol, pre {
+  p,
+  ul,
+  ol,
+  pre {
     padding-bottom: 1.4rem;
     padding-top: 1.4rem;
   }
@@ -180,10 +204,10 @@ hr {
     margin: 1.2rem -80px;
     padding-left: 80px;
     padding-right: 80px;
-  }
 
-  pre code {
-    font-size: 1.7rem;
+    code {
+      font-size: 1.7rem;
+    }
   }
 }
 
@@ -217,7 +241,10 @@ hr {
     margin: 1.2rem auto -0.8rem;
   }
 
-  p, ul, ol, pre {
+  p,
+  ul,
+  ol,
+  pre {
     padding-bottom: 1.4rem;
     padding-top: 1.4rem;
   }
@@ -230,10 +257,10 @@ hr {
     margin: 1rem -30px;
     padding-left: 30px;
     padding-right: 30px;
-  }
 
-  pre code {
-    font-size: 1.5rem;
+    code {
+      font-size: 1.5rem;
+    }
   }
 
   hr {
