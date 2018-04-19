@@ -1,11 +1,10 @@
 {
   "compilerOptions": {
     "module": "commonjs",
-    "target": "es2015",
-    "noImplicitAny": false,
-    "strictNullChecks": true,
+    "target": "es6",
+    "strict": true,
     "sourceMap": false,
-    "lib": ["es5", "es2015"],
+    "lib": ["es2017"],
     "baseUrl": "./",
     "paths": {
       "*": ["typings/*"]

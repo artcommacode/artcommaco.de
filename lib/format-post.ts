@@ -14,16 +14,16 @@ md.renderer.rules.image = (tokens, i) => {
   const token = tokens[i]
   const src = token.attrs[token.attrIndex('src')][1]
   const newSrc = process.env.NODE_ENV === 'production' ? `https://art-code.imgix.net${src}` : src
-  return `<img 
+  return `<img
     srcset="
       ${newSrc}?w=760 1x,
       ${newSrc}?w=760&fit=max&q=80&dpr=2 2x,
-      ${newSrc}?w=760&fit=max&q=60&dpr=3 3x" 
+      ${newSrc}?w=760&fit=max&q=60&dpr=3 3x"
     src="${newSrc}?w=760"
   >`
 }
 
-export default path => {
+export default (path: string): Post => {
   const slug = path.split('.')[0]
   const file = readFileSync(join(process.cwd(), `./posts/${path}`), 'utf8')
   const {attributes, body} = fm(file)
