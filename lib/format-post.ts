@@ -17,7 +17,7 @@ md.renderer.rules.image = (tokens, i) => {
   const [w760, w1280] = [760, 1280].map(resizeImage(src))
   return `<img
     alt="${token.content}"
-    srcset="${w760}1x, ${w1280} 2x"
+    srcset="${w760} 1x, ${w1280} 2x"
     src="${w760}"
   >`
 }
