@@ -29,3 +29,5 @@ Absolutely! It's less resource intensive, much faster and has a great set of def
 Maybe? Although TypeScript's known to be unsound they make a [good case for that](https://github.com/Microsoft/TypeScript/issues/9825#issuecomment-234115900) and in my experience Flow has many issues with soundness too. VS Code's TypeScript tooling makes it an obvious winner when using the editor but TypeScript also beats out Flow in the [shear number](https://github.com/DefinitelyTyped/DefinitelyTyped) of typings available for external libraries and hasn't once yet told me that an `EventEmitter` isn't an `EventEmitter`.
 
 Either way they're both a good midway point between untyped, vanilla JavaScript and something strongly typed like Purescript. I'm currently choosing between them on a project-by-project basis and usually use Flow for React and the frontend and TypeScript on the server.
+
+**Edit 03/2022:** I have some more recent thoughts around JavaScript tooling [here](/posts/2022-03-28-a-lot-can-change-in-five-years.html)
